@@ -1,0 +1,31 @@
+{
+  "name": "neneone/getUpdates",
+  "description": "PHP OOP per creare Telegram Bots tramite getUpdates.",
+  "type": "project",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "telegram",
+    "bot",
+    "getupdates"
+  ],
+  "authors": [
+    {
+      "name": "Enea Dolcini",
+      "email": "eneadolcini@gmail.com",
+      "homepage": "https://neneone.space",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "ext-json": "*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "neneone\\getUpdates\\": "src/"
+    }
+  }
+}
