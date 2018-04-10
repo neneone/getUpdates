@@ -4,7 +4,7 @@ getUpdates possiede già un Database interno che per l'utilizzo al momento viene
 
 ## Funzioni
 
-- [`serializeDatabase()`](databaseFunctions/serializedDatabase.html)
+- [`serializeDatabase()`](databaseFunctions/serializeDatabase.html)
 - [`getDatabase()`](databaseFunctions/getDatabase.html)
 - [`addDatabase()`](databaseFunctions/addDatabase.html)
 - [`returnDB()`](databaseFunctions/returnDB.html)
