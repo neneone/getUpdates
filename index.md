@@ -28,3 +28,4 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
   - [Con funzione di CallBack](updates.md#con-funzione-di-callback)
     - [Con anche Multithread](updates.md#con-multithread)
   - [Manualmente](updates.md#manuale)
+- [Gestire il Database](database.html)
