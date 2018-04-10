@@ -4,7 +4,7 @@
 $getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings);
 ```
 
-`$Settings` è un [array](http://php.net/manual/en/book.array.php) che contiene le varie impostazioni, che ora vedremo come creare.
+`$Settings` è un [array](http://php.net/manual/en/book.array.php) che contiene le varie impostazioni, che ora vedremo come creare. Lo puoi modificare accedendo a `$getUpdatesBot->settings;`.
 
 <hr>
 
