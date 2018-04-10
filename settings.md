@@ -41,3 +41,9 @@ Array delle impostazioni riguardati a `\neneone\getUpdates\Wrappers\serializedDa
 `$Settings['db']['default_path']`
 
 Path di default in cui serializzare / deserializzare il database. Se è vuota e non viene passata alcuna path, il default è `db.getUpdates`.
+
+<hr>
+
+`$Settings['plugins']`
+
+Array dei plugins da attivare. Ogni plugin è il nome di una classe o una classe (esempio: `$Settings['plugins'] = ['\neneone\getUpdates\Plugins\backgroundScreen];`).
