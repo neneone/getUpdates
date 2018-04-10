@@ -43,4 +43,4 @@ while (true) {
 }
 ```
 
-Questo codice definisce `$getUpdatesBot`, poi tramite la funzione `getUpdates()` prende gli updates e per ogni update esegue l'azione dovuta (in questo caso loggare che ha ricevuto l'update).
+Questo codice definisce `$getUpdatesBot`, poi tramite la funzione `getUpdates()` prende gli updates e per ogni update esegue l'azione dovuta (in questo caso loggare l'update che ha ricevuto).
