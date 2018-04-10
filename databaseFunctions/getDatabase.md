@@ -1,6 +1,6 @@
 # Metodo Database: getDatabase
 
-Serializza il database.
+Deserializza il database e aggiorna `$getUpdatesBot->db`.
 
 ### Parametri:
 
