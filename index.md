@@ -24,3 +24,7 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
 
 - [Installazione](installation.html)
 - [Come gestire le impostazioni](settings.html)
+- [Gestire gli Updates](updates.html)
+  - [Con funzione di CallBack](updates.md#con-funzione-di-callback)
+    - [Con anche Multithread](updates.md#con-multithread)
+  - [Manualmente](updates.md#manuale)
