@@ -12,7 +12,7 @@ Per poter utilizzare getUpdates ti serve un server (possibilmente VPS) con PHP 7
 
 La funzione `__construct` della classe richiede un solo parametro, `$settings`, e [qui](settings.html) puoi trovare come usarlo.
 
-Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https://github.com/Neneone/getUpdates/Examples).
+Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https://github.com/Neneone/getUpdates/tree/master/Examples).
 
 ## Features
 
