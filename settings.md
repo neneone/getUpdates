@@ -26,13 +26,13 @@ Array delle impostazioni riguardanti gli updates.
 
 `$Settings['updates']['event_handler']`
 
-Funzione strutturata così: `function($update)`. Deve avere come unico parametro `$update` che sarà l'update ricevuto. Per maggiori informazioni riguardanti l'update handling leggi [qui](UPDATES.thml).
+Funzione strutturata così: `function($update)`. Deve avere come unico parametro `$update` che sarà l'update ricevuto. Per maggiori informazioni riguardanti l'update handling leggi [qui](updates.thml).
 
 <hr>
 
 `$Settings['db']`
 
-Array delle impostazioni riguardati a `\neneone\getUpdates\Wrappers\serializedDatabase.php`. Per maggiori informazioni (se lo vuoi usare leggi poiché è importante) leggi [qui](DATABASE.html).
+Array delle impostazioni riguardati a `\neneone\getUpdates\Wrappers\serializedDatabase.php`. Per maggiori informazioni (se lo vuoi usare leggi poiché è importante) leggi [qui](database.html).
 
 `$Settings['db']['serialization_interval']`
 
