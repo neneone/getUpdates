@@ -1,4 +1,4 @@
-# getUpdates - PHP OOP per creare Bot Telegram | Docs in Beta, non usare perché non pronte.
+# getUpdates - PHP OOP per creare Bot Telegram | Beta Docs
 
 ## Cos'è?
 
