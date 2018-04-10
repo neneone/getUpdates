@@ -20,4 +20,4 @@ $getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings);
 
 Ecco la lista dei plugin preinstallati e come usarli:
 
-- [`\neneone\getUpdates\Plugins\backgroundScreen`](Plugins/backgroundScreen.html)
+- [`\neneone\getUpdates\Plugins\backgroundScreen`](Plugins/backgroundScreen/index.html)
