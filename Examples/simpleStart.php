@@ -18,6 +18,6 @@ $getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings); # Inizializzare 
 
 $getUpdatesBot->setEventHandler('eventHandler'); # Inserire il nome della funzione o la funzione dell'eventHandler
 
-$getUpdatesBot->loopUpdates(1); # Inserire true (ovvero loopUpdates(true)) per abilitare il multiprocessing
+$getUpdatesBot->loopUpdates(); # Inserire true (ovvero loopUpdates(true)) per abilitare il multiprocessing
 
  ?>
