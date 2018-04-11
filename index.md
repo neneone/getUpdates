@@ -28,5 +28,6 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
   - [Con funzione di CallBack](updates.md#con-funzione-di-callback)
     - [Con anche Multithread](updates.md#con-multithread)
   - [Manualmente](updates.md#manuale)
+- [Inviare richieste](sending_requests.html)
 - [Gestire il Database](database.html)
 - [Gestire i Plugins](plugins.html)
