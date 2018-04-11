@@ -6,7 +6,7 @@ getUpdates è una PHP OOP (classe PHP) che utilizza le [BotAPI](https://core.tel
 
 ## Cosa mi serve?
 
-Per poter utilizzare getUpdates ti serve un server (possibilmente VPS) con PHP 7.1 o maggiore e screen ([come installare screen](screen_install.html)).
+Per poter utilizzare getUpdates ti serve un server (possibilmente VPS) con PHP 7.1 o maggiore.
 
 ## Utilizzo
 
