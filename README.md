@@ -1,2 +1,3 @@
-# getUpdates - Docs in arrivo! - Non usare
-PHP OOP per creare un bot utilizzando getUpdates.
+# getUpdates - PHP OOP per creare Bot Telegram
+
+[Documentazione](https://getupdates.neneone.space/)
