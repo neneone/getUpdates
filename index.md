@@ -29,5 +29,6 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
     - [Con anche Multithread](updates.md#con-multithread)
   - [Manualmente](updates.md#manuale)
 - [Inviare richieste](sending_requests.html)
+- [Lista metodi già fatti](method_list.html)
 - [Gestire il Database](database.html)
 - [Gestire i Plugins](plugins.html)
