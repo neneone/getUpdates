@@ -23,36 +23,39 @@ class API
     {
         $this->token = $token;
     }
+
     public function botAPI($method, $args = [])
     {
         $cURL = curl_init();
         $cURL_options = [
-    CURLOPT_URL => 'https://api.telegram.org/bot' . $this->token . '/' . $method,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => http_build_query($args),
-    CURLOPT_RETURNTRANSFER => true
+    CURLOPT_URL            => 'https://api.telegram.org/bot'.$this->token.'/'.$method,
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => http_build_query($args),
+    CURLOPT_RETURNTRANSFER => true,
   ];
         curl_setopt_array($cURL, $cURL_options);
         $result = curl_exec($cURL);
         curl_close($cURL);
+
         return json_decode($result, true);
     }
+
     public function sendMessage($chat_id, $text, $parse_mode = 'HTML', $reply_markup = false, $inline = true)
     {
         $Data = [
-      'chat_id' => $chat_id,
-      'text' => $text,
-      'parse_mode' => $parse_mode
+      'chat_id'    => $chat_id,
+      'text'       => $text,
+      'parse_mode' => $parse_mode,
     ];
         if (isset($reply_markup) && empty($reply_markup) === false) {
             if ($inline == true) {
                 $Data['reply_markup'] = [
-          'inline_keyboard' => $reply_markup
+          'inline_keyboard' => $reply_markup,
         ];
             } else {
                 $Data['reply_markup'] = [
-          'keyboard' => $reply_markup,
-          'resize_keyboard' => true
+          'keyboard'        => $reply_markup,
+          'resize_keyboard' => true,
         ];
             }
             $Data['reply_markup'] = json_encode($Data['reply_markup']);
@@ -60,6 +63,7 @@ class API
                 $Data['reply_markup'] = false;
             }
         }
+
         return $this->botAPI(__FUNCTION__, $Data);
     }
 }

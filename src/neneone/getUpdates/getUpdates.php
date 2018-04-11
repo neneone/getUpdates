@@ -20,12 +20,13 @@ namespace neneone\getUpdates;
 class getUpdates
 {
     use \neneone\getUpdates\Wrappers\serializedDatabase;
+
     public function __construct($settings)
     {
         $this->settingsScheme = [
-      'token' => true,
+      'token'  => true,
       'logger' => [
-        'default' => true
+        'default' => true,
       ],
     ];
         $this->buildSettings($settings);
@@ -47,6 +48,7 @@ class getUpdates
         }
         \neneone\getUpdates\Logger::log('getUpdatesBot inizializzato correttamente.', \neneone\getUpdates\Logger::IMPORTANCE_LOW, $this->settings);
     }
+
     private function buildSettings($settings, $settingsScheme = 0)
     {
         if ($settingsScheme == 0) {
@@ -54,14 +56,15 @@ class getUpdates
         }
         foreach ($settingsScheme as $setting => $required) {
             if ($required === true && isset($settings[$setting]) == false) {
-                throw new \neneone\getUpdates\Exception('Devi fornire l\'impostazione ' . $setting . '!');
+                throw new \neneone\getUpdates\Exception('Devi fornire l\'impostazione '.$setting.'!');
             } elseif (isset($settings[$setting]) == false && isset($settingsScheme[$setting]['default'])) {
                 $settings[$setting] = $settingsScheme[$setting]['default'];
-                \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione ' . $setting . ' che ha assunto il valore di ' . $settingsScheme[$setting]['default'], \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
+                \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione '.$setting.' che ha assunto il valore di '.$settingsScheme[$setting]['default'], \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
             }
         }
         $this->settings = $settings;
     }
+
     public function setEventHandler($function)
     {
         if (is_callable($function)) {
@@ -70,6 +73,7 @@ class getUpdates
             throw new \neneone\getUpdates\Exception('L\'EventHandler deve essere una funzione valida!');
         }
     }
+
     public function loopUpdates($fork = false)
     {
         $offset = 0;
@@ -79,7 +83,7 @@ class getUpdates
             while (true) {
                 $updates = $this->botAPI->getUpdates(['offset' => $offset]);
                 if (isset($this->settings['db']['serialization_interval'])) {
-                    if ($time + $this->settings['db']['serialization_interval']<= time()) {
+                    if ($time + $this->settings['db']['serialization_interval'] <= time()) {
                         $time = time();
                         $this->serializeDatabase();
                     }

@@ -24,16 +24,18 @@ class backgroundScreen
         $this->settings = $settings;
         \neneone\getUpdates\Logger::log('Plugin background avviato!', \neneone\getUpdates\Logger::IMPORTANCE_LOW, $this->settings);
     }
+
     public function backgroundStart($file, $args = false)
     {
         if (isset($args) && is_array($args)) {
-            $command = 'screen -d -m php ' . $file . ' ';
+            $command = 'screen -d -m php '.$file.' ';
             foreach ($args as $arg) {
-                $command .= escapeshellarg($arg) . ' ';
+                $command .= escapeshellarg($arg).' ';
             }
         } else {
-            $command = 'screen -d -m php ' . $file;
+            $command = 'screen -d -m php '.$file;
         }
+
         return shell_exec($command);
     }
 }
