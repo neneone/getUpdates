@@ -23,8 +23,6 @@ $anotherWebhookInfos = (new \neneone\getUpdates\botAPI($anotherBotToken))->botAP
 
 ## Utilizzare funzioni già fatte
 
-Nella classe `\neneone\getUpdates\API` sono presenti funzioni già create (e ottimizzate per il metodo specifico della funzione) che possono essere molto più facilmente utilizzate usando anche la documentazione. Tuttavia queste funzioni non posso soddisfare al 100% tutte le necessità per le richieste, e si può quindi fare ricorso alla [creazione dei parametri](#creare-i-parametri)
+Nella classe `\neneone\getUpdates\API` sono presenti funzioni già create (e ottimizzate per il metodo specifico della funzione) che possono essere molto più facilmente utilizzate usando anche la documentazione. Tuttavia queste funzioni non posso soddisfare al 100% tutte le necessità per le richieste, e si può quindi fare ricorso alla [creazione dei parametri](#creare-i-parametri).
 
-### Funzioni già create:
-
-- [sendMessage](API_Functions/sendMessage.html)
+[Funzioni già create (cliccami).](method_list.html)
