@@ -2,8 +2,9 @@
 
 namespace neneone\getUpdates\Wrappers;
 
-trait loopUpdates {
-public function loopUpdates($fork = false)
+trait loopUpdates
+{
+    public function loopUpdates($fork = false)
     {
         $offset = 0;
         $time = time();
@@ -45,4 +46,4 @@ public function loopUpdates($fork = false)
             }
         }
     }
-    }
+}
