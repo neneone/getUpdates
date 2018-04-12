@@ -24,7 +24,7 @@ class getUpdates
     public function __construct($settings)
     {
         $this->settingsScheme = [
-      'token' => true,
+      'token'  => true,
       'logger' => [
         'default' => true,
       ],

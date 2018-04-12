@@ -14,7 +14,7 @@ function eventHandler($update)
 }
 
 $Settings = [
-  'token' => '523209487:AAEtYvbeFiGJ2g-2I76c0c1y6EC5NiKW_YQ', // Inserire il token del bot
+  'token'   => '523209487:AAEtYvbeFiGJ2g-2I76c0c1y6EC5NiKW_YQ', // Inserire il token del bot
   'plugins' => [
     '\neneone\getUpdates\Plugins\backgroundScreen',
   ],

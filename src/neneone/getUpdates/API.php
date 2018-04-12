@@ -28,9 +28,9 @@ class API
     {
         $cURL = curl_init();
         $cURL_options = [
-    CURLOPT_URL => 'https://api.telegram.org/bot'.$this->token.'/'.$method,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => http_build_query($args),
+    CURLOPT_URL            => 'https://api.telegram.org/bot'.$this->token.'/'.$method,
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => http_build_query($args),
     CURLOPT_RETURNTRANSFER => true,
   ];
         curl_setopt_array($cURL, $cURL_options);
@@ -43,8 +43,8 @@ class API
     public function sendMessage($chat_id, $text, $parse_mode = 'HTML', $reply_markup = false, $inline = true)
     {
         $Data = [
-      'chat_id' => $chat_id,
-      'text' => $text,
+      'chat_id'    => $chat_id,
+      'text'       => $text,
       'parse_mode' => $parse_mode,
     ];
         if (isset($reply_markup) && false === empty($reply_markup)) {
@@ -54,7 +54,7 @@ class API
         ];
             } else {
                 $Data['reply_markup'] = [
-          'keyboard' => $reply_markup,
+          'keyboard'        => $reply_markup,
           'resize_keyboard' => true,
         ];
             }
