@@ -22,6 +22,7 @@ class getUpdates
 {
     use \neneone\getUpdates\Wrappers\serializedDatabase;
     use \neneone\getUpdates\Wrappers\loopUpdates;
+    use \neneone\getUpdates\Wrappers\loadUpdate;
 
     public function __construct($settings)
     {
