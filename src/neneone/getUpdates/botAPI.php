@@ -28,7 +28,7 @@ class botAPI implements botAPIScheme
     {
         $this->token = $token;
         $getMe = $this->getMe();
-        if ($getMe['ok'] == true) {
+        if (true == $getMe['ok']) {
             $this->getMe = $getMe['result'];
         } else {
             unset($this->token);
@@ -41,9 +41,9 @@ class botAPI implements botAPIScheme
     {
         $cURL = curl_init();
         $cURL_options = [
-      CURLOPT_URL            => 'https://api.telegram.org/bot'.$this->token.'/'.$method,
-      CURLOPT_POST           => true,
-      CURLOPT_POSTFIELDS     => http_build_query($args),
+      CURLOPT_URL => 'https://api.telegram.org/bot'.$this->token.'/'.$method,
+      CURLOPT_POST => true,
+      CURLOPT_POSTFIELDS => http_build_query($args),
       CURLOPT_RETURNTRANSFER => true,
     ];
         curl_setopt_array($cURL, $cURL_options);

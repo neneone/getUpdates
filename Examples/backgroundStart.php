@@ -14,7 +14,7 @@ function eventHandler($update)
 }
 
 $Settings = [
-  'token'   => '523209487:AAEtYvbeFiGJ2g-2I76c0c1y6EC5NiKW_YQ', // Inserire il token del bot
+  'token' => '523209487:AAEtYvbeFiGJ2g-2I76c0c1y6EC5NiKW_YQ', // Inserire il token del bot
   'plugins' => [
     '\neneone\getUpdates\Plugins\backgroundScreen',
   ],
@@ -22,7 +22,7 @@ $Settings = [
 
 $getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings); // Inizializzare la classe
 
-if (isset($argv[1]) && $argv[1] == 'background') {
+if (isset($argv[1]) && 'background' == $argv[1]) {
     $getUpdatesBot->plugins['\neneone\getUpdates\Plugins\backgroundScreen']->backgroundStart(__FILE__);
     die;
 }

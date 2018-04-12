@@ -24,7 +24,7 @@ trait serializedDatabase
 {
     public function serializeDatabase($path = 0)
     {
-        if ($path == 0 or empty($path) or file_exists($path) == false) {
+        if (0 == $path or empty($path) or false == file_exists($path)) {
             if (isset($this->settings['db']['default_path']) && file_exists($this->settings['db']['default_path'])) {
                 $path = $this->settings['db']['default_path'];
             } else {
@@ -45,7 +45,7 @@ trait serializedDatabase
 
     public function getDatabase($path = 0)
     {
-        if ($path == 0 or empty($path) or file_exists($path) == false) {
+        if (0 == $path or empty($path) or false == file_exists($path)) {
             if (isset($this->settings['db']['default_path']) && file_exists($this->settings['db']['default_path'])) {
                 $path = $this->settings['db']['default_path'];
             } else {

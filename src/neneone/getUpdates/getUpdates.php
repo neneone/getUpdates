@@ -24,7 +24,7 @@ class getUpdates
     public function __construct($settings)
     {
         $this->settingsScheme = [
-      'token'  => true,
+      'token' => true,
       'logger' => [
         'default' => true,
       ],
@@ -32,7 +32,7 @@ class getUpdates
         $this->buildSettings($settings);
         $this->botAPI = new botAPI($this->settings['token']);
         $this->API = new API($this->botAPI->token);
-        if (isset($this->settings['db']['unserialize_db_on_startup']) === false) {
+        if (false === isset($this->settings['db']['unserialize_db_on_startup'])) {
             $this->settings['db']['unserialize_db_on_startup'] = true;
             \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione db.unserialize_db_on_startup che ha assunto il valore di true', \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
         }
@@ -51,13 +51,13 @@ class getUpdates
 
     private function buildSettings($settings, $settingsScheme = 0)
     {
-        if ($settingsScheme == 0) {
+        if (0 == $settingsScheme) {
             $settingsScheme = $this->settingsScheme;
         }
         foreach ($settingsScheme as $setting => $required) {
-            if ($required === true && isset($settings[$setting]) == false) {
+            if (true === $required && false == isset($settings[$setting])) {
                 throw new \neneone\getUpdates\Exception('Devi fornire l\'impostazione '.$setting.'!');
-            } elseif (isset($settings[$setting]) == false && isset($settingsScheme[$setting]['default'])) {
+            } elseif (false == isset($settings[$setting]) && isset($settingsScheme[$setting]['default'])) {
                 $settings[$setting] = $settingsScheme[$setting]['default'];
                 \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione '.$setting.' che ha assunto il valore di '.$settingsScheme[$setting]['default'], \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
             }
@@ -79,7 +79,7 @@ class getUpdates
         $offset = 0;
         $time = time();
         \neneone\getUpdates\Logger::log('Starting updates loop...');
-        if ($fork == true) {
+        if (true == $fork) {
             while (true) {
                 $updates = $this->botAPI->getUpdates(['offset' => $offset]);
                 if (isset($this->settings['db']['serialization_interval'])) {
