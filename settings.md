@@ -26,7 +26,7 @@ Array delle impostazioni riguardanti gli updates.
 
 `$Settings['updates']['event_handler']`
 
-Funzione strutturata così: `function($update)`. Deve avere come unico parametro `$update` che sarà l'update ricevuto. Per maggiori informazioni riguardanti l'update handling leggi [qui](updates.thml).
+Funzione strutturata così: `function($update)`. Deve avere come unico parametro `$update` che sarà l'update ricevuto. Per maggiori informazioni riguardanti l'update handling leggi [qui](updates.html).
 
 <hr>
 
