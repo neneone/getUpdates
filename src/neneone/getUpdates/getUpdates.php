@@ -79,4 +79,8 @@ class getUpdates
             throw new \neneone\getUpdates\Exception('L\'EventHandler deve essere una funzione valida!');
         }
     }
+    public function setEndpoint($endpoint) {
+      $this->API->endPoint = $endpoint;
+      $this->botAPI->endPoint = $endpoint;
+    }
 }
