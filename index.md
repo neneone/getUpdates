@@ -32,3 +32,4 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
 - [Lista metodi già fatti](method_list.html)
 - [Gestire il Database](database.html)
 - [Gestire i Plugins](plugins.html)
+- [Aggiornare la classe](getupdates_update.html)
