@@ -43,7 +43,7 @@ class botAPI implements botAPIScheme
     {
         $cURL = curl_init();
         $cURL_options = [
-      CURLOPT_URL            => $this->endPoint . 'bot'.$this->token.'/'.$method,
+      CURLOPT_URL            => $this->endPoint.'bot'.$this->token.'/'.$method,
       CURLOPT_POST           => true,
       CURLOPT_POSTFIELDS     => http_build_query($args),
       CURLOPT_RETURNTRANSFER => true,
