@@ -22,6 +22,6 @@ trait loadUpdate
 {
     public function loadUpdate()
     {
-        return shell_exec('git checkout master && git fetch --all && git reset --hard origin/master && git pull');
+        return shell_exec('git checkout master && git fetch --all && git reset --hard origin/master && git pull && cd ../../../../ && composer dump-autoload && composer update');
     }
 }
