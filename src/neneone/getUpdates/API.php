@@ -20,17 +20,17 @@ namespace neneone\getUpdates;
 
 class API
 {
-  public function __construct($token, $endpoint = 'https://api.telegram.org/')
-  {
-      $this->token = $token;
-      $this->endPoint = $endpoint;
-  }
+    public function __construct($token, $endpoint = 'https://api.telegram.org/')
+    {
+        $this->token = $token;
+        $this->endPoint = $endpoint;
+    }
 
     public function botAPI($method, $args = [])
     {
         $cURL = curl_init();
         $cURL_options = [
-    CURLOPT_URL            => $this->endPoint . 'bot'.$this->token.'/'.$method,
+    CURLOPT_URL            => $this->endPoint.'bot'.$this->token.'/'.$method,
     CURLOPT_POST           => true,
     CURLOPT_POSTFIELDS     => http_build_query($args),
     CURLOPT_RETURNTRANSFER => true,
