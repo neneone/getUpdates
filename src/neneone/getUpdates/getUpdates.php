@@ -31,6 +31,9 @@ class getUpdates
       'logger' => [
         'default' => true,
       ],
+      'endpoint' => [
+        'default' => 'https://api.telegram.org/'
+      ]
     ];
         $this->buildSettings($settings);
         $this->botAPI = new botAPI($this->settings['token']);
