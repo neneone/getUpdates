@@ -52,4 +52,4 @@ Array dei plugins da attivare. Ogni plugin è il nome di una classe o una classe
 
 `$Settings['endpoint']`
 
-L'endpoint da usare per fare le richieste. Di default è `https://api.telegram.org/`. Si può modificare anche da `$getUpdatesBot->API->endPoint` e `$getUpdatesBot->botAPI->endPoint`.
+L'endpoint da usare per fare le richieste. Di default è `https://api.telegram.org/`. Si può modificare anche da `$getUpdatesBot->API->endPoint` e `$getUpdatesBot->botAPI->endPoint` oppure con `$getUpdatesBot->setEndpoint($new_endpoint);`.
