@@ -16,7 +16,21 @@ Contiene il token del Bot.
 
 `$Settings['logger']`
 
-True se il logger è abilitato, false se è disabilitato. Alcune funzioni tuttavia lo avranno attivo in ogni caso. Di default è true.
+Array delle impostazioni riguardanti il logger.
+
+`$Settings['logger']['logger']`
+
+La modalità del logger. Può essere `1` se è attivato, `0` se è disattivato. Di default è `1`.
+
+`$Settings['logger']['logger_level']`
+
+Il livello minimo del logger da utilizzare (per esempio se imposti WARNING e viene loggato qualcosa di livello NOTICE, non verrà stampato). I possibili livelli sono:
+
+- `\neneone\getUpdates\Logger::VERBOSE`
+- `\neneone\getUpdates\Logger::NOTICE`,
+- `\neneone\getUpdates\Logger::WARNING`,
+- `\neneone\getUpdates\Logger::ERROR`,
+- `\neneone\getUpdates\Logger::FATAL_ERROR`
 
 <hr>
 
