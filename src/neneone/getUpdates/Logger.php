@@ -20,13 +20,13 @@ namespace neneone\getUpdates;
 
 class Logger
 {
-    const IMPORTANCE_LOW = 0;
-
-    const IMPORTANCE_MEDIUM = 1;
-
-    const IMPORTANCE_HIGH = 2;
-
-    const IMPORTANCE_VERY_HIGH = 3;
+    const VERBOSE = 4;
+    const NOTICE = 3;
+    const WARNING = 2;
+    const ERROR = 1;
+    const FATAL_ERROR = 0;
+    public static $mode;
+    public static $level;
 
     public static function __getColouredString($string, $text_colour = 'light_gray', $background_colour = null)
     {
@@ -70,26 +70,40 @@ class Logger
         return $new_string;
     }
 
-    public static function log($message, $importance = self::IMPORTANCE_LOW, $settings = false, $end_of_line = PHP_EOL)
-    {
-        if (false == $settings) {
-            $settings = ['logger' => true];
-        }
-        if (false == $settings['logger']) {
-            return;
-        }
-        if (self::IMPORTANCE_LOW == $importance) {
-            echo self::__getColouredString($message, 'light_gray').$end_of_line;
-        } elseif (self::IMPORTANCE_MEDIUM == $importance) {
-            echo self::__getColouredString($message, 'yellow').$end_of_line;
-        } elseif (self::IMPORTANCE_HIGH == $importance) {
-            echo self::__getColouredString($message, 'green').$end_of_line;
-        } elseif (self::IMPORTANCE_VERY_HIGH == $importance) {
-            echo self::__getColouredString($message, 'light_gray', 'red').$end_of_line;
-        } else {
-            echo $message.$end_of_line;
-        }
+    public static function __static_construct($mode, $level) {
+      self::$mode = $mode;
+      self::$level = $level;
+    }
 
-        return true;
+    public static function log($message, $level = self::NOTICE) {
+      if($level > self::$level || self::$mode == 0) {
+        return;
+      }
+      self::logger($message, $level);
+    }
+
+    public static function logger($message, $level = self::NOTICE, $suffix = PHP_EOL)
+    {
+        switch($level) {
+          case self::VERBOSE:
+          $msg = self::__getColouredString($message, 'light_gray');
+          break;
+          case self::NOTICE:
+          $msg = self::__getColouredString($message, 'light_gray');
+          break;
+          case self::WARNING:
+          $msg = self::__getColouredString($message, 'yellow');
+          break;
+          case self::ERROR:
+          $msg = self::__getColouredString($message, 'red');
+          break;
+          case self::FATAL_ERROR:
+          $msg = self::__getColouredString($message, 'light_gray', 'red');
+          break;
+          default:
+          $msg = $message;
+          break;
+        }
+        echo $msg . $suffix;
     }
 }

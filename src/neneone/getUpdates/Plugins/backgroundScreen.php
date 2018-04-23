@@ -23,7 +23,7 @@ class backgroundScreen
     public function __construct($settings)
     {
         $this->settings = $settings;
-        \neneone\getUpdates\Logger::log('Plugin background avviato!', \neneone\getUpdates\Logger::IMPORTANCE_LOW, $this->settings);
+        \neneone\getUpdates\Logger::log('Plugin background avviato!', \neneone\getUpdates\Logger::WARNING);
     }
 
     public function backgroundStart($file, $args = false)

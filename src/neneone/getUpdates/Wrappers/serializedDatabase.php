@@ -31,11 +31,11 @@ trait serializedDatabase
             } else {
                 $path = DIR.'/db.getUpdates';
             }
-            \neneone\getUpdates\Logger::log('Path per serializzare il database invalida, ha assunto un valore di default: '.realpath($path), \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
+            \neneone\getUpdates\Logger::log('Path per serializzare il database invalida, ha assunto un valore di default: '.realpath($path), \neneone\getUpdates\Logger::WARNING);
         }
         $db = serialize($this->db);
         if (empty($db)) {
-            \neneone\getUpdates\Logger::log('Database vuoto... fermo la serializzazione.');
+            \neneone\getUpdates\Logger::log('Database vuoto... fermo la serializzazione.', \neneone\getUpdates\Logger::WARNING);
 
             return false;
         }
@@ -52,7 +52,7 @@ trait serializedDatabase
             } else {
                 $path = DIR.'/db.getUpdates';
             }
-            \neneone\getUpdates\Logger::log('Path per deserializzare il database invalida, ha assunto un valore di default: '.realpath($path), \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
+            \neneone\getUpdates\Logger::log('Path per deserializzare il database invalida, ha assunto un valore di default: '.realpath($path), \neneone\getUpdates\Logger::WARNING);
         }
         if (file_exists($path)) {
             $db = unserialize(file_get_contents($path));

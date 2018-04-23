@@ -24,7 +24,7 @@ trait loopUpdates
     {
         $offset = 0;
         $time = time();
-        \neneone\getUpdates\Logger::log('Starting updates loop...');
+        \neneone\getUpdates\Logger::log('Starting updates loop...', \neneone\getUpdates\Logger::NOTICE);
         if (true == $fork) {
             while (true) {
                 $updates = $this->botAPI->getUpdates(['offset' => $offset]);

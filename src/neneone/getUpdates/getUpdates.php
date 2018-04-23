@@ -28,19 +28,53 @@ class getUpdates
     {
         $this->settingsScheme = [
       'token'  => true,
-      'logger' => [
-        'default' => true,
-      ],
       'endpoint' => [
         'default' => 'https://api.telegram.org/',
       ],
     ];
+
+        if(isset($settings['logger']) === false) {
+          $settings['logger'] = [
+            'logger' => 1,
+            'logger_level' => \neneone\getUpdates\Logger::VERBOSE
+          ];
+        } else {
+          if(isset($settings['logger']['logger']) === false) $settings['logger']['logger'] = 1; else {
+            switch($settings['logger']['logger']) {
+              case 0:
+              break;
+              case 1:
+              break;
+              default:
+              \neneone\getUpdates\Logger::logger('Modalità del logger non valida, ha assunto il valore di 1.', \neneone\getUpdates\Logger::ERROR);
+              break;
+            }
+          }
+          if(isset($settings['logger']['logger_level']) === false) $settings['logger']['logger_level'] = \neneone\getUpdates\Logger::VERBOSE; else {
+            switch($settings['logger']['logger']) {
+              case \neneone\getUpdates\Logger::VERBOSE:
+              break;
+              case \neneone\getUpdates\Logger::NOTICE:
+              break;
+              case \neneone\getUpdates\Logger::WARNING:
+              break;
+              case \neneone\getUpdates\Logger::ERROR:
+              break;
+              case \neneone\getUpdates\Logger::FATAL_ERROR:
+              break;
+              default:
+              \neneone\getUpdates\Logger::logger('Livello del logger non valido, ha assunto il valore di \neneone\getUpdates\Logger::VERBOSE.', \neneone\getUpdates\Logger::ERROR);
+              break;
+            }
+          }
+        }
+        \neneone\getUpdates\Logger::__static_construct($settings['logger']['logger'], $settings['logger']['logger_level']);
         $this->buildSettings($settings);
         $this->botAPI = new botAPI($this->settings['token']);
         $this->API = new API($this->botAPI->token);
         if (false === isset($this->settings['db']['unserialize_db_on_startup'])) {
             $this->settings['db']['unserialize_db_on_startup'] = true;
-            \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione db.unserialize_db_on_startup che ha assunto il valore di true', \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
+            \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione db.unserialize_db_on_startup che ha assunto il valore di true', \neneone\getUpdates\Logger::WARNING);
         }
         if ($this->settings['db']['unserialize_db_on_startup'] == true) {
             $this->getDatabase();
@@ -52,7 +86,7 @@ class getUpdates
                 }
             }
         }
-        \neneone\getUpdates\Logger::log('getUpdatesBot inizializzato correttamente.', \neneone\getUpdates\Logger::IMPORTANCE_LOW, $this->settings);
+        \neneone\getUpdates\Logger::log('getUpdatesBot inizializzato correttamente.', \neneone\getUpdates\Logger::NOTICE);
     }
 
     private function buildSettings($settings, $settingsScheme = 0)
@@ -65,7 +99,7 @@ class getUpdates
                 throw new \neneone\getUpdates\Exception('Devi fornire l\'impostazione '.$setting.'!');
             } elseif (false == isset($settings[$setting]) && isset($settingsScheme[$setting]['default'])) {
                 $settings[$setting] = $settingsScheme[$setting]['default'];
-                \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione '.$setting.' che ha assunto il valore di '.$settingsScheme[$setting]['default'], \neneone\getUpdates\Logger::IMPORTANCE_MEDIUM);
+                \neneone\getUpdates\Logger::log('Non hai fornito l\'impostazione '.$setting.' che ha assunto il valore di '.$settingsScheme[$setting]['default'], \neneone\getUpdates\Logger::WARNING);
             }
         }
         $this->settings = $settings;
