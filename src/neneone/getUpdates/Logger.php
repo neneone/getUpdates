@@ -70,21 +70,23 @@ class Logger
         return $new_string;
     }
 
-    public static function __static_construct($mode, $level) {
-      self::$mode = $mode;
-      self::$level = $level;
+    public static function __static_construct($mode, $level)
+    {
+        self::$mode = $mode;
+        self::$level = $level;
     }
 
-    public static function log($message, $level = self::NOTICE) {
-      if($level > self::$level || self::$mode == 0) {
-        return;
-      }
-      self::logger($message, $level);
+    public static function log($message, $level = self::NOTICE)
+    {
+        if ($level > self::$level || self::$mode == 0) {
+            return;
+        }
+        self::logger($message, $level);
     }
 
     public static function logger($message, $level = self::NOTICE, $suffix = PHP_EOL)
     {
-        switch($level) {
+        switch ($level) {
           case self::VERBOSE:
           $msg = self::__getColouredString($message, 'light_gray');
           break;
@@ -104,6 +106,6 @@ class Logger
           $msg = $message;
           break;
         }
-        echo $msg . $suffix;
+        echo $msg.$suffix;
     }
 }

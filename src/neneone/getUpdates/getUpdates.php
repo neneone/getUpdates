@@ -27,20 +27,22 @@ class getUpdates
     public function __construct($settings)
     {
         $this->settingsScheme = [
-      'token'  => true,
+      'token'    => true,
       'endpoint' => [
         'default' => 'https://api.telegram.org/',
       ],
     ];
 
-        if(isset($settings['logger']) === false) {
-          $settings['logger'] = [
-            'logger' => 1,
-            'logger_level' => \neneone\getUpdates\Logger::VERBOSE
+        if (isset($settings['logger']) === false) {
+            $settings['logger'] = [
+            'logger'       => 1,
+            'logger_level' => \neneone\getUpdates\Logger::VERBOSE,
           ];
         } else {
-          if(isset($settings['logger']['logger']) === false) $settings['logger']['logger'] = 1; else {
-            switch($settings['logger']['logger']) {
+            if (isset($settings['logger']['logger']) === false) {
+                $settings['logger']['logger'] = 1;
+            } else {
+                switch ($settings['logger']['logger']) {
               case 0:
               break;
               case 1:
@@ -49,9 +51,11 @@ class getUpdates
               \neneone\getUpdates\Logger::logger('Modalità del logger non valida, ha assunto il valore di 1.', \neneone\getUpdates\Logger::ERROR);
               break;
             }
-          }
-          if(isset($settings['logger']['logger_level']) === false) $settings['logger']['logger_level'] = \neneone\getUpdates\Logger::VERBOSE; else {
-            switch($settings['logger']['logger']) {
+            }
+            if (isset($settings['logger']['logger_level']) === false) {
+                $settings['logger']['logger_level'] = \neneone\getUpdates\Logger::VERBOSE;
+            } else {
+                switch ($settings['logger']['logger']) {
               case \neneone\getUpdates\Logger::VERBOSE:
               break;
               case \neneone\getUpdates\Logger::NOTICE:
@@ -66,7 +70,7 @@ class getUpdates
               \neneone\getUpdates\Logger::logger('Livello del logger non valido, ha assunto il valore di \neneone\getUpdates\Logger::VERBOSE.', \neneone\getUpdates\Logger::ERROR);
               break;
             }
-          }
+            }
         }
         \neneone\getUpdates\Logger::__static_construct($settings['logger']['logger'], $settings['logger']['logger_level']);
         $this->buildSettings($settings);
