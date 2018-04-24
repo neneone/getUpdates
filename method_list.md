@@ -3,3 +3,4 @@
 Ecco la lista dei metodi già creati in `\neneone\getUpdates\API`. [Leggi di più](sending_requests.html#utilizzare-funzioni-già-fatte).
 
 - [sendMessage](API_Functions/sendMessage.html)
+- [getUpdates](API_Functions/getUpdates.html)
