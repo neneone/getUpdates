@@ -68,18 +68,24 @@ class API
 
         return $this->botAPI(__FUNCTION__, $Data);
     }
-    public function getUpdates() {
-      if(isset($this->offset) === false) $this->offset = 0;
-      \neneone\getUpdates\Logger::log('Prendo gli update...', \neneone\getUpdates\Logger::VERBOSE);
-      $updates = $this->botAPI(__FUNCTION__, ['offset' => $this->offset, 'limit' => 1]);
-      \neneone\getUpdates\Logger::log('Elaboro il contenuto...', \neneone\getUpdates\Logger::VERBOSE);
-      if(isset($updates['result'][0])) {
-        $this->offset = $updates['result'][0]['update_id'] + 1;
-        \neneone\getUpdates\Logger::log('Ho ricevuto un update! Lo ritorno...', \neneone\getUpdates\Logger::NOTICE);
-        return $updates['result'][0];
-      } else {
-        \neneone\getUpdates\Logger::log('Non ho ricevuto alcun update, continuo a prenderli...', \neneone\getUpdates\Logger::VERBOSE);
-        return false;
-      }
+
+    public function getUpdates()
+    {
+        if (isset($this->offset) === false) {
+            $this->offset = 0;
+        }
+        \neneone\getUpdates\Logger::log('Prendo gli update...', \neneone\getUpdates\Logger::VERBOSE);
+        $updates = $this->botAPI(__FUNCTION__, ['offset' => $this->offset, 'limit' => 1]);
+        \neneone\getUpdates\Logger::log('Elaboro il contenuto...', \neneone\getUpdates\Logger::VERBOSE);
+        if (isset($updates['result'][0])) {
+            $this->offset = $updates['result'][0]['update_id'] + 1;
+            \neneone\getUpdates\Logger::log('Ho ricevuto un update! Lo ritorno...', \neneone\getUpdates\Logger::NOTICE);
+
+            return $updates['result'][0];
+        } else {
+            \neneone\getUpdates\Logger::log('Non ho ricevuto alcun update, continuo a prenderli...', \neneone\getUpdates\Logger::VERBOSE);
+
+            return false;
+        }
     }
 }
