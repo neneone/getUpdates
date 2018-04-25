@@ -22,10 +22,10 @@ trait loadUpdate
 {
     public function loadUpdate()
     {
-        if(file_exists(__DIR__ . '/../../../../.git')) {
-          return shell_exec('git checkout master && git fetch --all && git reset --hard origin/master && git pull && cd ../.. &&  composer dump-autoload && composer update');
+        if (file_exists(__DIR__.'/../../../../.git')) {
+            return shell_exec('git checkout master && git fetch --all && git reset --hard origin/master && git pull && cd ../.. &&  composer dump-autoload && composer update');
         } else {
-          return passthru('composer update');
+            return passthru('composer update');
         }
     }
 }
