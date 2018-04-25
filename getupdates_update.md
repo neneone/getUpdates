@@ -1,6 +1,6 @@
 # Aggiornare getUpdates
 
-Per aggiornare getUpdates c'è un Wrapper (`\neneone\getUpdates\Wrappers\loadUpdate`) che permette di aggiornare facilmente il bot **tramite `git` o `composer`**. Sceglia automaticamente quale usare.
+Per aggiornare getUpdates c'è un Wrapper (`\neneone\getUpdates\Wrappers\loadUpdate`) che permette di aggiornare facilmente il bot **tramite `git` o `composer`**. Sceglie automaticamente quale usare.
 
 Ecco come:
 
