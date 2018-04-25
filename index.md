@@ -18,7 +18,7 @@ Se vuoi vedere degli esempi puoi guardare la directory degli esempi [qui](https:
 
 - Il bot recupera gli update precedenti a cui non ha risposto (presto opzionale).
 - Grazie al plugin `\neneone\getUpdates\Plugins\backgroundScreen` può funzionare anche in background.
-- Il tutto si può aggiornare da Terminale se installato tramite `git` o `composer`. Se installato tramite `git` si può installare anche automaticamente ([leggi di più](getupdates_update.html)).
+- Il tutto si può aggiornare automaticamente direttamente dal codice se installato tramite `git` o `composer`.
 - Ha una funzione per la gestione degli updates automatica, una semiautomatica e anche manuale. Supporta multithread.
 
 ## Docs
