@@ -25,7 +25,7 @@ $Settings = [
 $getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings); // Inizializzare la classe
 
 while (true) { // Bisogna verificare per sempre se ci sono nuovi updates
-  while ($update = $getUpdates->API->getUpdate()) { // Questa funzione restituisce solo un'update, il primo preso. Ogni volta che viene chiamata restituisce il successivo.
+  while ($update = $getUpdates->API->getUpdates()) { // Questa funzione restituisce solo un'update, il primo preso. Ogni volta che viene chiamata restituisce il successivo.
     $chatID = $update['message']['chat']['id'];
       $getUpdatesBot->API->sendMessage($chatID, 'Ciao!');
   }
