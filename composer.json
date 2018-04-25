@@ -1,5 +1,5 @@
 {
-  "name": "neneone/getUpdates",
+  "name": "neneone/getupdates",
   "description": "PHP OOP per creare Telegram Bots tramite getUpdates.",
   "type": "project",
   "license": "AGPL-3.0-only",
