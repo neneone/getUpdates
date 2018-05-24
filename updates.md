@@ -28,6 +28,28 @@ $getUpdatesBot->loopUpdates(true);
 
 Questo codice è uguale al precedente ma usa `loopUpdates(true)`, ovvero abilita il multithread (ogni update avrà un proprio thread).
 
+## Semi-automatico
+
+In questa libreria è presente un sistema per creare un sistema di getUpdates quasi automatico, che però permette di evitare i vincoli che ha il codice che viene eseguito all'interno delle funzioni di PHP. Gli sconvenienti sono però che le funzioni che vengono eseguite durante `loopUpdates()` non verranno eseguite se non manualmente.
+
+
+```php
+<?php
+
+$getUpdatesBot = new \neneone\getUpdates\getUpdates($Settings);
+
+while (true) {
+  while ($update = $getUpdates->API->getUpdates()) {
+    $chatID = $update['message']['chat']['id'];
+      $getUpdatesBot->API->sendMessage($chatID, 'Ciao!');
+  }
+}
+```
+
+Questo codice definisce `$getUpdates`, poi usando `getUpdates()` ma di `$getUpdates->API` e non di `$getUpdates->botAPI`, prende solo il più vecchio update ricevuto (in modo da eseguire in ordine cronologico) e lo ritorna, poi passa al prossimo e così via, in modo che l'utente non si debba preoccupare del gestire correttamente i `foreach`, lo skip dell'offset ecc.
+
+La funzione ritorna sempre un update nell'ordine sopra indicato, ma nel caso in cui non ci fossero ritornerà `false`, ed è quindi opportuno usare due cicli `while` in modo da rendere il fetching costante.
+
 ## Manuale
 
 ```php
