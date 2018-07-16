@@ -60,7 +60,7 @@ Path di default in cui serializzare / deserializzare il database. Se è vuota e 
 
 `$Settings['plugins']`
 
-Array dei plugins da attivare. Ogni plugin è il nome di una classe o una classe (esempio: `$Settings['plugins'] = ['\neneone\getUpdates\Plugins\backgroundScreen];`).
+Array dei plugins da attivare. Ogni plugin è il nome di una classe o una classe (esempio: `$Settings['plugins'] = ['\neneone\getUpdates\Plugins\backgroundScreen'];`).
 
 <hr>
 
