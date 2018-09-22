@@ -1,12 +1,12 @@
-# getUpdates - PHP OOP per creare Bot Telegram
+# getUpdates - Libreria PHP per creare Bot Telegram
 
 ## Cos'è?
 
-getUpdates è una PHP OOP (classe PHP) che utilizza le [BotAPI](https://core.telegram.org/bots/api) ed il metodo [getUpdates](https://core.telegram.org/bots/api#getupdates) per creare un Bot Telegram.
+getUpdates è una Librearia scritta in PHP che utilizza le [BotAPI](https://core.telegram.org/bots/api) ed il metodo [getUpdates](https://core.telegram.org/bots/api#getupdates) per creare un Bot Telegram.
 
 ## Cosa mi serve?
 
-Per poter utilizzare getUpdates ti serve un server (possibilmente VPS) con PHP 7.1 o maggiore.
+Per poter utilizzare getUpdates serve un server (possibilmente VPS) con PHP 7.1 o maggiore.
 
 ## Utilizzo
 
